@@ -1,23 +1,18 @@
 import 'package:flutter/material.dart';
 
-class CustomTextFormFiels extends StatelessWidget {
-  const CustomTextFormFiels({
-    super.key,
-    this.onChanged,
-    required this.controller,
-  });
-  final void Function(String)? onChanged;
+class CustomTextFormField extends StatelessWidget {
+  const CustomTextFormField({super.key, required this.controller});
   final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: controller,
       validator: (value) {
         if (value == null || value.isEmpty) {
           return 'Please enter Name';
         }
         return null;
       },
-      onChanged: onChanged,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.all(15),
         // prefix: Icon(Icons.person),

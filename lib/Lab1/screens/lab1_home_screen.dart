@@ -14,7 +14,6 @@ class _Lab1HomeScreenState extends State<Lab1HomeScreen> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   TextEditingController controller = TextEditingController();
-  String? user;
   List<String> usersList = [];
 
   @override
@@ -30,18 +29,13 @@ class _Lab1HomeScreenState extends State<Lab1HomeScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(height: 20),
-              CustomTextFormFiels(
-                controller: controller,
-                onChanged: (value) {
-                  user = value;
-                  setState(() {});
-                },
-              ),
+              CustomTextFormField(controller: controller),
               const SizedBox(height: 20),
               CustomButton(
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
-                    usersList.add(user!);
+                    usersList.add(controller.text);
+                    controller.clear();
                     setState(() {});
                   } else {
                     autovalidateMode = AutovalidateMode.always;
