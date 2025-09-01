@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app_level_four/Lab1/widgets/custom_button.dart';
 import 'package:mobile_app_level_four/Lab1/widgets/custom_form_field.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -25,6 +26,15 @@ class _HomeScreenState extends State<HomeScreen> {
               onChanged: (value) {
                 user = value;
                 setState(() {});
+              },
+            ),
+            CustomButton(
+              onPressed: () {
+                if (formKey.currentState!.validate()) {
+                } else {
+                  autovalidateMode = AutovalidateMode.always;
+                  setState(() {});
+                }
               },
             ),
           ],
