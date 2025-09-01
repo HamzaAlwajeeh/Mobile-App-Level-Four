@@ -1,0 +1,35 @@
+import 'package:flutter/material.dart';
+import 'package:mobile_app_level_four/Lab1/widgets/custom_form_field.dart';
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  GlobalKey<FormState> formKey = GlobalKey<FormState>();
+  AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  String? user;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('Home Screen')),
+      body: Column(
+        children: [
+          Form(
+            key: formKey,
+            autovalidateMode: autovalidateMode,
+            child: CustomTextFormFiels(
+              onChanged: (value) {
+                user = value;
+                setState(() {});
+              },
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
