@@ -13,6 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   String? user;
+  List<String> usersList = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,6 +32,8 @@ class _HomeScreenState extends State<HomeScreen> {
             CustomButton(
               onPressed: () {
                 if (formKey.currentState!.validate()) {
+                  usersList.add(user!);
+                  setState(() {});
                 } else {
                   autovalidateMode = AutovalidateMode.always;
                   setState(() {});
