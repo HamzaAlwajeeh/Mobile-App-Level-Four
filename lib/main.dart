@@ -10,6 +10,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(title: 'Level Four', home: Lab1HomeScreen());
+    return MaterialApp(
+      title: 'Level Four',
+      debugShowCheckedModeBanner: false,
+      home: Lab1HomeScreen(),
+    );
   }
 }

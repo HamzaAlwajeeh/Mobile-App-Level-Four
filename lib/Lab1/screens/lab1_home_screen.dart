@@ -23,31 +23,34 @@ class _Lab1HomeScreenState extends State<Lab1HomeScreen> {
       body: Form(
         key: formKey,
         autovalidateMode: autovalidateMode,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const SizedBox(height: 20),
-            CustomTextFormFiels(
-              onChanged: (value) {
-                user = value;
-                setState(() {});
-              },
-            ),
-            const SizedBox(height: 20),
-            CustomButton(
-              onPressed: () {
-                if (formKey.currentState!.validate()) {
-                  usersList.add(user!);
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const SizedBox(height: 20),
+              CustomTextFormFiels(
+                onChanged: (value) {
+                  user = value;
                   setState(() {});
-                } else {
-                  autovalidateMode = AutovalidateMode.always;
-                  setState(() {});
-                }
-              },
-            ),
-            const SizedBox(height: 40),
-            Expanded(child: CustomListView(users: usersList)),
-          ],
+                },
+              ),
+              const SizedBox(height: 20),
+              CustomButton(
+                onPressed: () {
+                  if (formKey.currentState!.validate()) {
+                    usersList.add(user!);
+                    setState(() {});
+                  } else {
+                    autovalidateMode = AutovalidateMode.always;
+                    setState(() {});
+                  }
+                },
+              ),
+              const SizedBox(height: 40),
+              Expanded(child: CustomListView(users: usersList)),
+            ],
+          ),
         ),
       ),
     );

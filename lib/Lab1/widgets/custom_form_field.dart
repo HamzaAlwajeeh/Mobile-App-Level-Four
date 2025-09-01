@@ -14,8 +14,9 @@ class CustomTextFormFiels extends StatelessWidget {
       },
       onChanged: onChanged,
       decoration: InputDecoration(
+        prefix: Icon(Icons.person),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
-        labelText: 'Enter your text',
+        hintText: 'Enter your text',
       ),
     );
   }
