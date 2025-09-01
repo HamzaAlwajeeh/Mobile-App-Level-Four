@@ -14,7 +14,8 @@ class CustomTextFormFiels extends StatelessWidget {
       },
       onChanged: onChanged,
       decoration: InputDecoration(
-        prefix: Icon(Icons.person),
+        contentPadding: EdgeInsets.all(15),
+        // prefix: Icon(Icons.person),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
         hintText: 'Enter User Name',
       ),
