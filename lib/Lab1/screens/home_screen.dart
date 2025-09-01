@@ -16,19 +16,19 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Home Screen')),
-      body: Column(
-        children: [
-          Form(
-            key: formKey,
-            autovalidateMode: autovalidateMode,
-            child: CustomTextFormFiels(
+      body: Form(
+        key: formKey,
+        autovalidateMode: autovalidateMode,
+        child: Column(
+          children: [
+            CustomTextFormFiels(
               onChanged: (value) {
                 user = value;
                 setState(() {});
               },
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
