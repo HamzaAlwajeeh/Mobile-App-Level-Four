@@ -8,7 +8,10 @@ class CustomListView extends StatelessWidget {
     return ListView.builder(
       itemCount: users.length,
       itemBuilder: (context, index) {
-        return ListTile(title: Text(users[index]));
+        return ListTile(
+          title: Text(users[index]),
+          leading: CircleAvatar(child: Icon(Icons.person)),
+        );
       },
     );
   }

@@ -3,14 +3,14 @@ import 'package:mobile_app_level_four/Lab1/widgets/custom_button.dart';
 import 'package:mobile_app_level_four/Lab1/widgets/custom_form_field.dart';
 import 'package:mobile_app_level_four/Lab1/widgets/custom_list_view.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key});
+class Lab1HomeScreen extends StatefulWidget {
+  const Lab1HomeScreen({super.key});
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
+  State<Lab1HomeScreen> createState() => _Lab1HomeScreenState();
 }
 
-class _HomeScreenState extends State<HomeScreen> {
+class _Lab1HomeScreenState extends State<Lab1HomeScreen> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   String? user;
@@ -24,13 +24,16 @@ class _HomeScreenState extends State<HomeScreen> {
         key: formKey,
         autovalidateMode: autovalidateMode,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            const SizedBox(height: 20),
             CustomTextFormFiels(
               onChanged: (value) {
                 user = value;
                 setState(() {});
               },
             ),
+            const SizedBox(height: 20),
             CustomButton(
               onPressed: () {
                 if (formKey.currentState!.validate()) {
@@ -42,6 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 }
               },
             ),
+            const SizedBox(height: 40),
             Expanded(child: CustomListView(users: usersList)),
           ],
         ),
