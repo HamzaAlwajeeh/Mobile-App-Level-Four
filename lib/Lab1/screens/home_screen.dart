@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app_level_four/Lab1/widgets/custom_button.dart';
 import 'package:mobile_app_level_four/Lab1/widgets/custom_form_field.dart';
+import 'package:mobile_app_level_four/Lab1/widgets/custom_list_view.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -14,6 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   String? user;
   List<String> usersList = [];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,6 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 }
               },
             ),
+            Expanded(child: CustomListView(users: usersList)),
           ],
         ),
       ),
