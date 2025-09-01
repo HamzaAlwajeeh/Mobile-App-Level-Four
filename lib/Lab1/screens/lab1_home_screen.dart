@@ -13,6 +13,7 @@ class Lab1HomeScreen extends StatefulWidget {
 class _Lab1HomeScreenState extends State<Lab1HomeScreen> {
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
+  TextEditingController controller = TextEditingController();
   String? user;
   List<String> usersList = [];
 
@@ -30,6 +31,7 @@ class _Lab1HomeScreenState extends State<Lab1HomeScreen> {
             children: [
               const SizedBox(height: 20),
               CustomTextFormFiels(
+                controller: controller,
                 onChanged: (value) {
                   user = value;
                   setState(() {});

@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 
 class CustomTextFormFiels extends StatelessWidget {
-  const CustomTextFormFiels({super.key, this.onChanged});
+  const CustomTextFormFiels({
+    super.key,
+    this.onChanged,
+    required this.controller,
+  });
   final void Function(String)? onChanged;
+  final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
     return TextFormField(
