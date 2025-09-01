@@ -8,15 +8,15 @@ class CustomTextFormFiels extends StatelessWidget {
     return TextFormField(
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'Please enter some text';
+          return 'Please enter Name';
         }
         return null;
       },
       onChanged: onChanged,
       decoration: InputDecoration(
         prefix: Icon(Icons.person),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.0)),
-        hintText: 'Enter your text',
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(16)),
+        hintText: 'Enter User Name',
       ),
     );
   }

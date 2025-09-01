@@ -19,7 +19,7 @@ class _Lab1HomeScreenState extends State<Lab1HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Home Screen')),
+      appBar: AppBar(title: const Text('Adding Users'), centerTitle: true),
       body: Form(
         key: formKey,
         autovalidateMode: autovalidateMode,
