@@ -6,7 +6,7 @@ class CustomTextWidget extends StatelessWidget {
   const CustomTextWidget({super.key});
   @override
   Widget build(BuildContext context) {
-    final count = Provider.of<CounterProvider>(context).number;
+    int count = Provider.of<CounterProvider>(context).number;
     return Text(count.toString(), style: TextStyle(fontSize: 45));
   }
 }
