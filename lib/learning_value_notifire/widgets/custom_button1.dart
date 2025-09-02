@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app_level_four/learning_value_notifire/widgets/custom_buttom_sheet.dart';
 
 class CustomButton1 extends StatelessWidget {
   const CustomButton1({super.key});
@@ -6,13 +7,8 @@ class CustomButton1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      onPressed: () {
-        showBottomSheet(
-          context: context,
-          builder: (context) => Text('data'),
-          backgroundColor: Colors.white,
-        );
-      },
+      onPressed: () => showButtomSheet(context),
+
       style: ElevatedButton.styleFrom(
         backgroundColor: Color(0xff2B64E3),
         minimumSize: Size(MediaQuery.of(context).size.width - 64, 54),
@@ -26,6 +22,15 @@ class CustomButton1 extends StatelessWidget {
           color: Colors.white,
         ),
       ),
+    );
+  }
+
+  void showButtomSheet(BuildContext context) {
+    showBottomSheet(
+      context: context,
+      backgroundColor: Colors.white,
+      elevation: 10,
+      builder: (context) => CustomButtomSheet(),
     );
   }
 }
