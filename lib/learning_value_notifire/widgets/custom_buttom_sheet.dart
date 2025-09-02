@@ -9,7 +9,7 @@ class CustomButtomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 354,
+      height: 415,
       width: double.infinity,
       child: Padding(
         padding: const EdgeInsets.only(
@@ -20,7 +20,13 @@ class CustomButtomSheet extends StatelessWidget {
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [PermissionInfo(), CustomButton1(), CustomTextButton()],
+          children: [
+            PermissionInfo(),
+            SizedBox(height: 32),
+            CustomButton1(onPressed: () {}, text: 'Confirm'),
+            SizedBox(height: 32),
+            CustomTextButton(),
+          ],
         ),
       ),
     );
