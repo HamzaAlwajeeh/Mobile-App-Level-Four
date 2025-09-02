@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app_level_four/learning_value_notifire/widgets/custom_button1.dart';
+import 'package:mobile_app_level_four/learning_value_notifire/widgets/custom_text_button.dart';
 import 'package:mobile_app_level_four/learning_value_notifire/widgets/permission_info.dart';
 
 class CustomButtomSheet extends StatelessWidget {
@@ -19,11 +20,7 @@ class CustomButtomSheet extends StatelessWidget {
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            PermissionInfo(),
-            CustomButton1(),
-            // CustomTextButton(),
-          ],
+          children: [PermissionInfo(), CustomButton1(), CustomTextButton()],
         ),
       ),
     );
