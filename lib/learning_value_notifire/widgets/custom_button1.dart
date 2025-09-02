@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:mobile_app_level_four/learning_value_notifire/widgets/custom_buttom_sheet.dart';
 
 class CustomButton1 extends StatelessWidget {
-  const CustomButton1({super.key, this.onPressed, this.text});
+  const CustomButton1({
+    super.key,
+    this.onPressed,
+    this.text,
+    required this.textValue,
+  });
   final void Function()? onPressed;
   final String? text;
+  final ValueNotifier<String?> textValue;
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
@@ -30,7 +36,7 @@ class CustomButton1 extends StatelessWidget {
       context: context,
       backgroundColor: Colors.white,
       elevation: 2,
-      builder: (context) => CustomButtomSheet(),
+      builder: (context) => CustomButtomSheet(textValue: textValue),
     );
   }
 }
