@@ -10,7 +10,7 @@ class ProviderHomeScreen extends StatelessWidget {
   // [2] add provider package in pubspec.yaml
   // [3] create a class that extends ChangeNotifier and Use NotyfiLeners to notify the listeners
   // [4] Integrate Provider(ChangeNotifierProvider) : wrap the Widgets with ChangeNotifierProvider
-  // [5] consume the provider : use Consumer Widget to listen to the changes
+  // [5] Implement provider state management
   // [6] Trigger the changes : call the methods from the provider class to trigger the changes
 
   @override

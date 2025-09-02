@@ -6,16 +6,13 @@ class CustomButtonWidget extends StatelessWidget {
   const CustomButtonWidget({super.key});
   @override
   Widget build(BuildContext context) {
-    Color? backgroundColor;
     final count = Provider.of<CounterProvider>(context).number;
     return ElevatedButton(
       onPressed: () {
-        count % 2 == 0
-            ? backgroundColor = Colors.blue
-            : backgroundColor = Colors.green;
+        Provider.of<CounterProvider>(context, listen: false).increment();
       },
       style: ElevatedButton.styleFrom(
-        backgroundColor: backgroundColor,
+        backgroundColor: count % 2 == 0 ? Colors.blue : Colors.green,
         foregroundColor: Colors.white,
         minimumSize: const Size(140, 50),
       ),
