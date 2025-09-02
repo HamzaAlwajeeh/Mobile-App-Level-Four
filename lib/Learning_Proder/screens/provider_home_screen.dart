@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app_level_four/Learning_Proder/providers/counter_provider.dart';
 import 'package:mobile_app_level_four/Learning_Proder/widgets/custom_Text_widget.dart';
 import 'package:mobile_app_level_four/Learning_Proder/widgets/custom_button_widget.dart';
+import 'package:provider/provider.dart';
 
 class ProviderHomeScreen extends StatelessWidget {
   const ProviderHomeScreen({super.key});
@@ -15,13 +17,19 @@ class ProviderHomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            CustomTextWidget(),
-            const SizedBox(height: 20),
-            CustomButtonWidget(backgroundColor: Colors.blue, onPressed: () {}),
-          ],
+        child: Provider<CounterProvider>(
+          create: (context) => CounterProvider(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              CustomTextWidget(),
+              const SizedBox(height: 20),
+              CustomButtonWidget(
+                backgroundColor: Colors.blue,
+                onPressed: () {},
+              ),
+            ],
+          ),
         ),
       ),
     );
