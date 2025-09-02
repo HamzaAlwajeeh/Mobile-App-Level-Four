@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_app_level_four/Learning_Proder/providers/counter_provider.dart';
+import 'package:provider/provider.dart';
 
 class CustomButtonWidget extends StatelessWidget {
-  const CustomButtonWidget({
-    super.key,
-    this.onPressed,
-    required this.backgroundColor,
-  });
-  final void Function()? onPressed;
-  final Color backgroundColor;
+  const CustomButtonWidget({super.key});
   @override
   Widget build(BuildContext context) {
+    Color? backgroundColor;
+    final count = Provider.of<CounterProvider>(context).number;
     return ElevatedButton(
-      onPressed: onPressed,
+      onPressed: () {
+        count % 2 == 0
+            ? backgroundColor = Colors.blue
+            : backgroundColor = Colors.green;
+      },
       style: ElevatedButton.styleFrom(
         backgroundColor: backgroundColor,
         foregroundColor: Colors.white,
