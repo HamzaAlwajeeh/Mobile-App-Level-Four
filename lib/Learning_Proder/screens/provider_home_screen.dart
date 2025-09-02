@@ -4,15 +4,26 @@ import 'package:mobile_app_level_four/Learning_Proder/widgets/custom_button_widg
 
 class ProviderHomeScreen extends StatelessWidget {
   const ProviderHomeScreen({super.key});
+  // [1] convert This to StatefulWidget
+  // [2] add provider package in pubspec.yaml
+  // [3] create a class that extends ChangeNotifier and Use NotyfiLeners to notify the listeners
+  // [4] provide The provider : wrap the Widgets with ChangeNotifierProvider
+  // [5] consume the provider : use Consumer Widget to listen to the changes
+  // [6] Trigger the changes : call the methods from the provider class to trigger the changes
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        CustomTextWidget(),
-        CustomButtonWidget(backgroundColor: Colors.blue, onPressed: () {}),
-      ],
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            CustomTextWidget(),
+            const SizedBox(height: 20),
+            CustomButtonWidget(backgroundColor: Colors.blue, onPressed: () {}),
+          ],
+        ),
+      ),
     );
   }
 }
