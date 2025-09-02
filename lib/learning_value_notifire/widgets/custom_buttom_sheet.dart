@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:mobile_app_level_four/learning_value_notifire/widgets/custom_button1.dart';
 import 'package:mobile_app_level_four/learning_value_notifire/widgets/custom_text_button.dart';
 import 'package:mobile_app_level_four/learning_value_notifire/widgets/permission_info.dart';
+import 'package:provider/provider.dart';
 
 class CustomButtomSheet extends StatelessWidget {
-  const CustomButtomSheet({super.key, required this.textValue});
-  final ValueNotifier<String?> textValue;
+  const CustomButtomSheet({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -25,11 +26,11 @@ class CustomButtomSheet extends StatelessWidget {
             SizedBox(height: 32),
             CustomButton1(
               onPressed: () {
-                textValue.value = 'Permisson Accepted Successfully';
+                Provider.of<ValueNotifier<String?>>(context, listen: false)
+                    .value = 'Permisson Accepted Successfully';
                 Navigator.pop(context);
               },
               text: 'Confirm',
-              textValue: textValue,
             ),
             SizedBox(height: 32),
             CustomTextButton(),

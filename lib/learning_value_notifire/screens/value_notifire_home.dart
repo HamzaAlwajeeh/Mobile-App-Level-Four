@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_app_level_four/learning_value_notifire/widgets/custom_button1.dart';
+import 'package:provider/provider.dart';
 
 class ValueNotifireHome extends StatefulWidget {
   const ValueNotifireHome({super.key});
@@ -21,9 +22,12 @@ class _ValueNotifireHomeState extends State<ValueNotifireHome> {
           builder:
               (context, value, _) => Center(
                 child:
-                    textValue.value == null
-                        ? CustomButton1(textValue: textValue)
-                        : Text(textValue.value!),
+                    value == null
+                        ? ChangeNotifierProvider<ValueNotifier<String?>>.value(
+                          value: textValue,
+                          child: CustomButton1(),
+                        )
+                        : Text(value),
               ),
         ),
       ),
